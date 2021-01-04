@@ -27,7 +27,9 @@ onServer('esx:status:damagePlayer', function()
 end)
 
 on('esx:skin:loaded', function()
+  print('esx:skin:loaded emitted')
   if Config.Modules.Status.EnableStatus then
+    print('emitting to server esx:status:initialize')
     emitServer('esx:status:initialize')
     module.Init()
   end
